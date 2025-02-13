@@ -6,11 +6,11 @@
       geotab.addin.validateSession = () => {
         return {
           initialize(api, state, callback) {
-            saveSession("initialize");
+            saveSession(api, "initialize");
             callback();
           },
           focus(api, state) {
-            saveSession("focus");
+            saveSession(api, "focus");
           },
           blur(api, state) {
             console.log("User has navigated away from the add-in");
