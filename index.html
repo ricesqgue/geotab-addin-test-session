@@ -19,16 +19,15 @@
       };
 
       function saveSession(api, caller) {
-        api.getSession(function (session, server) {
-          console.log("call from " + caller + " session: ", session);
-          console.log("server", server);
+        api.getSession(function (session) {
+          console.log("Call from '" + caller + "' - session: ", session);
         });
       }
     </script>
   </head>
 
   <body>
-    <div id="n-preClick">
+    <div">
       <p>Logs on console</p>
     </div>
   </body>
