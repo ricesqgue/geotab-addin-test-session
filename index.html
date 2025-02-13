@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script>
+            geotab.addin.myCustomPage1 = () => {
+                return {
+                    initialize(api, state, callback) {
+					
+						            saveSession('initialize);
+                        callback();
+                    },
+                    focus(api, state) {
+                        saveSession('focus');
+                    },
+                    blur(api, state) {
+                        console.log("User has navigated away from the add-in");
+                    },
+                };
+            };
+			
+			function saveSession(api, caller) {
+				api.getSession(function (session, server) {
+				    console.log('call from ' + caller + " session: ", session)
+					  console.log("server", server);
+				});
+			}
+        </script>
+    </head>
+
+    <body>
+        <div id="n-preClick">
+			<p>Logs on console</p>
+        </div>
+    </body>
+</html>
